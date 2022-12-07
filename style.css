@@ -9,7 +9,8 @@
 
 .content1 .col {
     background-color: rgba(40, 107, 174, 0.548);
-    border: solid black 1px
+    border: solid black 1px;
+    display : flex;
 }
 
 .comment .col {
