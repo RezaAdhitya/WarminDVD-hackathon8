@@ -43,3 +43,7 @@ Ide:
                 ]
             }
         ]
+        Keranjang belanja = []
+        Username/pass buat login = []
+            masukin objek
+        
