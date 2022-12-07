@@ -29,10 +29,17 @@
     background-color :rgba(54, 208, 27, 0.5)
 }
 
-.comment {
-    margin-top: 100px
+.container .content1 {
+    margin-top: 30px
 }
 
-.container {
-    margin-top: 30px
+.card {
+    margin-bottom: 35px
+}
+
+.sort {
+    height: 50px;
+    border: solid black 1px;
+    margin-bottom: -5px;
+    margin-top: -20px
 }
