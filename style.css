@@ -4,7 +4,6 @@
     background-color: rgba(54, 208, 27, 0.5);
     border: solid black 1px;
     height: 100px;
-    background-image: ;
 }
 
 
@@ -17,7 +16,7 @@
 .comment .col {
     background-color: rgba(172, 40, 174, 0.5);
     border: solid black 1px;
-    height: 300px
+    height: auto;
 }
 
 .footer .col {
@@ -28,4 +27,12 @@
 
 .add-to-cart{
     background-color :rgba(54, 208, 27, 0.5)
+}
+
+.comment {
+    margin-top: 100px
+}
+
+.container {
+    margin-top: 30px
 }
