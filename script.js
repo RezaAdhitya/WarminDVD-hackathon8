@@ -203,3 +203,53 @@ const DBfilm = [
         review: [/*berisi object dari komentar/testimoni user */]
     }
 ]
+
+// Input Variable
+
+let trailerButton;
+let sortHargaMurah;
+
+function sortHarga(a, b) {
+  if (a.harga < b.harga) {
+    return -1;
+  }
+  if (a.harga > b.harga) {
+    return 1;
+  }
+  return 0;
+}
+
+function sortRating(a, b) {
+  if (a.rating < b.rating) {
+    return -1;
+  }
+  if (a.rating > b.rating) {
+    return 1;
+  }
+  return 0;
+}
+
+function selectSort(value) {
+    if (value === 'populer') {
+        return DBfilm.sort(sortRating).reverse()
+    } else if (value === 'murah') {
+        return DBfilm.sort(sortHarga)
+    } else if (value === 'mahal') {
+        return DBfilm.sort(sortHarga).reverse()
+    }
+}
+
+console.log(selectSort('mahal'))
+
+
+
+
+
+
+
+
+
+
+
+
+
