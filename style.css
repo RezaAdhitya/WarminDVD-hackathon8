@@ -14,14 +14,10 @@
 }
 
 .comment .col {
-    background-color: rgba(172, 40, 174, 0.5);
-    border: solid black 1px;
     height: auto;
 }
 
 .footer .col {
-    background-color: rgba(174, 40, 40, 0.5);
-    border: solid black 1px;
     height: 100px
 }
 
@@ -39,7 +35,6 @@
 
 .sort {
     height: 50px;
-    border: solid black 1px;
-    margin-bottom: -5px;
-    margin-top: -20px
+    margin-bottom: 10px;
+    margin-top: 10px
 }
