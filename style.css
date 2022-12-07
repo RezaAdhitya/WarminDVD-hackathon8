@@ -1,0 +1,25 @@
+
+
+.header .col {
+    background-color: rgba(54, 208, 27, 0.5);
+    border: solid black 1px;
+    height: 100px
+}
+
+
+.content1 .col {
+    background-color: rgba(40, 107, 174, 0.548);
+    border: solid black 1px
+}
+
+.comment .col {
+    background-color: rgba(172, 40, 174, 0.5);
+    border: solid black 1px;
+    height: 300px
+}
+
+.footer .col {
+    background-color: rgba(174, 40, 40, 0.5);
+    border: solid black 1px;
+    height: 100px
+}
