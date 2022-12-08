@@ -1,16 +1,16 @@
 //genre
 // Action, comedy, Horor, Romantic, Drama
 //...................===============>>>>>>>>>>>>>> WARMINDVD <<<<<<<<<<<<<=============...........................
-const DBfilm = [
+let DBfilm = [
     {
         id: 1,
         title: 'The Peaky Blinders 5',
         genre: 'Action',
         harga: 92000,
         rating: 9.7,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Peaky-Blinders-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=Ruyl8_PT_y8',
-        sinopsis: [''/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Keluarga Shelby mengalami perpecahan pasca penangkapan Freddie, dan kondisi ini diperburuk oleh kedatangan Arthur Senior, ayah mereka.']
     },
     {
         id: 2,
@@ -18,9 +18,9 @@ const DBfilm = [
         genre: 'Action',
         harga: 71000,
         rating: 8.5,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Baby-Driver-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=zTvJJnoWIPk',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Baby (Ansel Elgort) adalah seorang pemuda yang bekerja sebagai pengemudi untuk kelompok perampok bank di Atlanta, Georgia.']
     },
     {
         id: 3,
@@ -28,9 +28,9 @@ const DBfilm = [
         genre: 'Comedy',
         harga: 81000,
         rating: 9.0,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Hot-Fuzz-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=674Ka18uFuA',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Menceritakan Nicholas Angel (Simon Pegg) yang merupakan seorang polisi London yang sangat taat hukum, disiplin dan mempunyai catatan kerja yang amat memuaskan.']
     },
     {
         id: 4,
@@ -38,9 +38,9 @@ const DBfilm = [
         genre: 'Action',
         harga: 60500,
         rating: 7.4,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Jhon-Wick-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=C0BMx-qxsP4',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['John Wick adalah mantan pembunuh bayaran yang pensiun dari dunia mafia dengan alasan menikah. Suatu hari, istri John yang bernama Helen Wick meninggal.']
     },
     {
         id: 5,
@@ -48,9 +48,9 @@ const DBfilm = [
         genre: 'Romantic',
         harga: 55000,
         rating: 8.6,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/25-21-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=n7F8o-SoK8s',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Na Hee Do, perempuan pemimpi yang akhirnya dapat menjadi atlet anggar peraih medali emas Asian Games. Serta kisah cinta dan persahabatan yang kuat di masa muda.']
     },
     {
         id: 6,
@@ -58,9 +58,9 @@ const DBfilm = [
         genre: 'Horor',
         harga: 45500,
         rating: 6.3,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Scream-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=beToTslH17s',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Setahun setelah ibunda Sidney terbunuh, terjadi pembunuhan beruntun. Ia mulai curiga jika itu saling berkaitan dan mencoba menemukan pelakunya.']
     },
     {
         id: 7,
@@ -68,9 +68,9 @@ const DBfilm = [
         genre: 'Action',
         harga: 105000,
         rating: 7,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/One-Piece-Red.png',
         trailer: 'https://www.youtube.com/watch?v=89JWRYEIG-s',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Topi Jerami pergi ke sebuah festival musik hingga bertemu dengan Uta, karakter baru yang ternyata adalah anak Shanks, sosok inspirasi Luffy.']
     },
     {
         id: 8,
@@ -78,9 +78,9 @@ const DBfilm = [
         genre: 'Action',
         harga: 63000,
         rating: 7.5,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Black-Adam-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=X0tOpBuYasI',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Berkisah tentang sosok antihero yang mendapatkan kekuatan dari dewa mesir bernama Adam. Ia datang untuk menciptakan keadilan di dunia saat ini.']
     },
     {
         id: 9,
@@ -88,9 +88,9 @@ const DBfilm = [
         genre: 'Horor',
         harga: 54000,
         rating: 7.6,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Train-to-Busan-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=1ovgxN2VWNc',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Seok-woo dan putrinya pergi ke Busan dengan kereta untuk menemui istrinya. Perjalanan berubah menjadi petaka saat mereka terjebak di tengah-tengah zombie']
     },
     {
         id: 10,
@@ -98,9 +98,9 @@ const DBfilm = [
         genre: 'Romantic',
         harga: 79000,
         rating: 8.7,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Crash-Landing-on-You.png',
         trailer: 'https://www.youtube.com/watch?v=GVQGWgeVc4k',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Drama komedi romantis ini bercerita tentang perjalanan asmara Yoon Se Ri dan Ri Jung Hyuk yang bertemu akibat kecelakaan paragliding']
     },
     {
         id: 11,
@@ -108,9 +108,9 @@ const DBfilm = [
         genre: 'Drama',
         harga: 81000,
         rating: 8.2,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Miracle-in-Cell-7-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=G2wPoBy2JQI',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Dodo Rozak hanya ingin menjadi ayah yang baik bagi anaknya, Kartika. sekalipun dia hanyalah pria dengan kecerdasan terbatas, bertingkah dan berperilaku seperti anak-anak']
     },
     {
         id: 12,
@@ -118,9 +118,9 @@ const DBfilm = [
         genre: 'Horor',
         harga: 67000,
         rating: 7.6,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/KKN-Desa-Penari-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=_ykK5YsWes0',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['tentang sekelompok mahasiswa yang tengah melakukan program KKN. Film ini diadaptasi dari salah satu cerita horor yang viral di tahun 2019 melalui Twitter']
     },
     {
         id: 13,
@@ -128,9 +128,9 @@ const DBfilm = [
         genre: 'Romantic',
         harga: 73000,
         rating: 8.1,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Mariposa-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=N9PUbRIKYOA',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Acha ingin mendapatkan hati Iqbal, cowok cakep, pintar dan dikenal berhati dingin. Sahabatnya, Amanda berusaha mencegah niatnya karena takut Acha sakit hati']
     },
     {
         id: 14,
@@ -138,9 +138,9 @@ const DBfilm = [
         genre: 'Drama',
         harga: 62000,
         rating: 7.8,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Imperfect-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=f4Sc26vQHcU',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Tentang seorang wanita bernama Rara yang kerap mengalami body shaming. Sampai tuntutan pekerjaan mengharuskan dia merubah total penampilannya.']
     },
     {
         id: 15,
@@ -148,9 +148,9 @@ const DBfilm = [
         genre: 'Action',
         harga: 76000,
         rating: 8.2,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Mencuri-Raden-Saleh-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=DN3sRz_veBU',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Pencurian terbesar tinggal menghitung hari. Komplotan sudah lengkap dan siap untuk mencuri lukisan sang maestro, Raden Saleh, yang berjudul Penangkapan Diponegoro.']
     },
     {
         id: 16,
@@ -158,9 +158,9 @@ const DBfilm = [
         genre: 'Drama',
         harga: 43000,
         rating: 6.1,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Perahu-Kertas-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=vFjTDMJam30',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Kugy, yang bercita-cita ingin menjadi penulis dongeng, kuliah di Fakultas Sastra.Keenan, pelukis muda berbakat, dipaksa untuk kuliah di Fakultas Ekonomi oleh ayahnya.']
     },
     {
         id: 17,
@@ -168,9 +168,9 @@ const DBfilm = [
         genre: 'Comedy',
         harga: 99000,
         rating: 9.1,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Night-at-the-Museum-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=KMKk7Dn__-Y',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Larry, penjaga malam di Museum Sejarah dibantu oleh patung-patung pameran yang hidup di malam hari untuk menggagalkan pencurian batu sihir.']
     },
     {
         id: 18,
@@ -178,9 +178,9 @@ const DBfilm = [
         genre: 'Horor',
         harga: 76000,
         rating: 8.2,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/The-Conjuring-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=k10ETZ41q5o',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Ketika suami istri Rod dan Carolyn menyadari bahwa keluarga mereka tengah diganggu oleh roh jahat, mereka meminta bantuan pada pasangan ahli supranatural.']
     },
     {
         id: 19,
@@ -188,9 +188,9 @@ const DBfilm = [
         genre: 'Comedy',
         harga: 63000,
         rating: 8.9,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/SPY-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=YrY3v1eDmQY',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Susan Cooper adalah analis CIA yang selalu bekerja di balik meja. Tapi ketika terjadi situasi genting, ia menawarkan diri untuk menjadi mata-mata.']
     },
     {
         id: 20,
@@ -198,9 +198,9 @@ const DBfilm = [
         genre: 'Comedy',
         harga: 77000,
         rating: 7.1,
-        cover: 'URL LINK COVER IMAGE',
+        cover: 'asset/Cek-Toko-Sebelah-Cover.png',
         trailer: 'https://www.youtube.com/watch?v=r9NJveLN3zI',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: ['Setelah Erwin menerima tawaran kerja di Singapura, ayahnya sakit dan butuh dirinya untuk meneruskan usaha toko. Sementara Yohan, kakaknya, merasa ayahnya pilih kasih.']
     }
 ]
 let DBcomment = [
@@ -241,29 +241,59 @@ let DBcart = [{
 }
 ];
 
-// Render Database
-let juduls = document.getElementsByClassName("card-title");
-let docGenre = document.getElementsByClassName("card-genre");
-let docHarga = document.getElementsByClassName("card-harga");
-let docRating = document.getElementsByClassName("card-rating");
-let docSinopsis = document.getElementsByClassName("card-sinopsis");
-function renderData(){
-    let output = ''
-    for (let perDB of DBfilm){
-        console.log(perDB['title'])
-        for (let index in juduls){
-            console.log(perDB['id']-1 == index)
-            if (perDB['id']-1 == index){
-                juduls[index].innerHTML = perDB['title'];
-                docGenre[index].innerHTML = perDB['genre'];
-                docHarga[index].innerHTML = perDB['harga'];
-                docRating[index].innerHTML = perDB['rating'];
-            }
-        }
+let DBuserAcc = [
+    {
+        username: 'Dimas Nugroho Ramadhan',
+        password: 'apaja'
     }
-    return output;
+]
+
+// Render Database
+// let juduls = document.getElementsByClassName("card-title");
+// let docGenre = document.getElementsByClassName("card-genre");
+// let docHarga = document.getElementsByClassName("card-harga");
+// let docRating = document.getElementsByClassName("card-rating");
+// let docSinopsis = document.getElementsByClassName("card-sinopsis");
+
+function renderData(){
+    let box = document.getElementById('box')
+    let data = ""
+    for (let perDB of DBfilm){
+    
+        data += `
+            <div class="col-md-3"><div class="card" style="width: 18rem;">
+                <img src="${perDB.cover}" class="card-img-top" alt="...">
+                <div class="card-body card-body-custom">
+                    <h5 class="card-title">${perDB.title}</h5>
+                    <p class="card-sinopsis">${perDB.sinopsis}</p>
+                    <p class="card-genre">${perDB.genre}</p>
+                    <p class="card-harga">${perDB.harga}</p>
+                    <p class="card-rating">${perDB.rating}</p>
+                    <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
+                    <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                </div>
+            </div></div>
+      ` 
+    }
+    box.innerHTML = data
+
+    let commentCard = document.getElementById('comment')
+    let dataComment = ""
+    for (let perC of DBcomment) {
+
+        dataComment += `
+        <div class="card" style="width: 36rem;">
+              <div class="card-body text-start comment-card">
+                <h5 class="card-title text-warning">${perC.nama}</h5>
+                <p class="card-text">${perC.komentar}</p>
+              </div>
+            </div>
+        `
+    }
+    commentCard.innerHTML = dataComment
 }
 renderData()
+
 
 // Input Variable
 
@@ -302,12 +332,17 @@ function selectSort(value) {
 
 // console.log(selectSort('populer'))
 
-function testimoni(name, text) {
+function testimoni() {
+    let name = document.getElementById('comment-name').value
+    let text = document.getElementById('comment-komen').value
     let obj = {
         nama: name,
         komentar: text
     }
     DBcomment.push(obj)
+
+    alert('makasih sudah meninggalkan kenangan')
+    renderData()
 }
 
 
@@ -320,7 +355,8 @@ function addToCart(id) {
     let cart = DBcart.find(perData => perData.id === film.id);
 
     if(cart){
-         cart.quantity++;
+        cart.quantity++;
+        cart.harga += DBfilm.harga;
     }else{
       DBcart.push({...film, quantity: 1})
     //   return DBcart
@@ -354,13 +390,62 @@ function minusCart(id){
     return DBcart
 }
 // console.log(minusCart(3))
-
 function filterShowMovie(value) {
-    let data = DBfilm.filter(perData => perData.genre === value);
-    return data
+    let x = DBfilm.filter(perData => perData.genre === value);
+    renderFiltered(x)
 }
 
-// console.log(filterShowMovie('Action'))
+function renderFiltered(perGenre){
+
+    if (!perGenre)
+        perGenre = DBfilm
+
+    let box = document.getElementById('box')
+    let data = ""
+    for (let perDB of perGenre){
+    
+        data += `
+            <div class="col-md-3"><div class="card" style="width: 18rem;">
+                <img src="${perDB.cover}" class="card-img-top" alt="...">
+                <div class="card-body card-body-custom">
+                    <h5 class="card-title">${perDB.title}</h5>
+                    <p class="card-sinopsis">${perDB.sinopsis}</p>
+                    <p class="card-genre">${perDB.genre}</p>
+                    <p class="card-harga">${perDB.harga}</p>
+                    <p class="card-rating">${perDB.rating}</p>
+                    <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
+                    <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                </div>
+            </div></div>
+      ` 
+    }
+    box.innerHTML = data
+}
+renderFiltered()
+
+function register(nama, pw){
+    let data = DBuserAcc.find(perData => perData.username === nama)
+    if(!data){
+        DBuserAcc.push({username:nama, password:pw})-
+        alert('kamu udah jadi member. diskonanya nanti ya :p')
+    }else{
+        alert('yang kreativ dong :( nama usernamenya udah ada tau...')
+    }
+}
+
+function login(nama ,pw){
+    let data = DBuserAcc.find(perData => perData.username === nama && perData.password === pw)
+    if(data){
+        //fitur account ada belom di buat
+        document.getElementById('useracc').innerHTML = data.username;//menampilkan nama user account
+        document //ngeshow element
+        alert('')
+    }else{
+        alert('coba inget inget password atau username kamu salah')
+    }
+}
+
+
 
 
 
