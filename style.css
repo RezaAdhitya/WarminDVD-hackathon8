@@ -60,8 +60,7 @@ body{
     height: 375px;
     width: auto;
     border-radius: 10px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
+    box-shadow:  rgba(0, 0, 0, 0.5) 0px 54px 55px;
     margin: 10px;
     margin-bottom: 0;
 }

@@ -247,23 +247,43 @@ let docGenre = document.getElementsByClassName("card-genre");
 let docHarga = document.getElementsByClassName("card-harga");
 let docRating = document.getElementsByClassName("card-rating");
 let docSinopsis = document.getElementsByClassName("card-sinopsis");
+
 function renderData(){
-
-
-    let output = ''
+    let box = document.getElementById('box')
+    let data = ""
     for (let perDB of DBfilm){
-        for (let index in juduls){
-            console.log(perDB['id']-1 == index)
-            if (perDB['id']-1 == index){
-                juduls[index].innerHTML = perDB['title'];
-                docGenre[index].innerHTML = perDB['genre'];
-                docHarga[index].innerHTML = perDB['harga'];
-                docRating[index].innerHTML = perDB['rating'];
-                docSinopsis[index].innerHTML = perDB['sinopsis'];
-            }
-        }
+    
+        data += `
+            <div class="col-md-3"><div class="card" style="width: 18rem;">
+                <img src="${perDB.cover}" class="card-img-top" alt="...">
+                <div class="card-body card-body-custom">
+                    <h5 class="card-title">${perDB.title}</h5>
+                    <p class="card-sinopsis">${perDB.sinopsis}</p>
+                    <p class="card-genre">${perDB.genre}</p>
+                    <p class="card-harga">${perDB.harga}</p>
+                    <p class="card-rating">${perDB.rating}</p>
+                    <a href="${perDB.trailer}" class="btn btn-dark">Trailer</a>
+                    <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                </div>
+            </div></div>
+      ` 
     }
-    return output;
+    box.innerHTML = data
+
+    let commentCard = document.getElementById('comment')
+    let dataComment = ""
+    for (let perC of DBcomment) {
+
+        dataComment += `
+        <div class="card" style="width: 30rem;">
+              <div class="card-body text-start comment-card">
+                <h5 class="card-title">${perC.nama}</h5>
+                <p class="card-text">${perC.komentar}</p>
+              </div>
+            </div>
+        `
+    }
+    commentCard.innerHTML = dataComment
 }
 renderData()
 
