@@ -1,11 +1,11 @@
-
+body {
+    background-image: url('asset/backGround.jpg');
+}
 
 .header .col {
-    background-color: #115173 ;
-    color: #FFD700;
-    border: solid black 1px;
     height: 100px;
     width: 200px;
+    margin: 30px
 }
 
 
@@ -36,7 +36,7 @@
 
 .card {
     margin-bottom: 35px;
-    background-color: #022C43;
+    background-color: rgba(0,0,0,0);
     margin: 10px;
 }
 
@@ -86,7 +86,7 @@ body{
 }
 
 .comment-section {
-    background-color: white;
+    background-color: rgba(61, 78, 87, 0.6);
     max-height: 300px ;
     overflow-y: scroll;
     color: black;
