@@ -366,9 +366,16 @@ function addToCart(id) {
 // console.log(addToCart(4))
 
 function deleteCart(index){
-    DBcart.splice(index,1);
+    //validasi
+    let text = "kamu yakin mau buang item belanjaan kamu ?";
+  if (confirm(text) == true) {
+      DBcart.splice(index,1);
+      alert("kenapa kok ga di beli :'(")
+    return DBcart 
+  } else {
+    alert('belanja yang banyak ya :p') 
+  }
 
-    return DBcart
 }
 // console.log(deleteCart(1))
 function minusCart(id){
