@@ -370,7 +370,6 @@ function minusCart(id){
     return DBcart
 }
 // console.log(minusCart(3))
-
 function filterShowMovie(value) {
     let data = DBfilm.filter(perData => perData.genre === value);
     return data
