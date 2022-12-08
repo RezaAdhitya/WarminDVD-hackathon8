@@ -390,7 +390,7 @@ function filterShowMovie(value) {
 function register(nama, pw){
     let data = DBuserAcc.find(perData => perData.username === nama)
     if(!data){
-        DBuserAcc.push({username:nama, password:pw})
+        DBuserAcc.push({username:nama, password:pw})-
         alert('kamu udah jadi member. diskonanya nanti ya :p')
     }else{
         alert('yang kreativ dong :( nama usernamenya udah ada tau...')
