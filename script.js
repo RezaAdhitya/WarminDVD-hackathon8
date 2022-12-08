@@ -297,8 +297,12 @@ renderData()
 
 // Input Variable
 
-let trailerButton;
-let sortHargaMurah;
+let sorting = document.querySelector('.dropdown-menu');
+sorting.addEventListener('click', (e)=>{
+    e.preventDefault()
+    selectSort(e.target.innerText)
+    
+})
 
 function sortHarga(a, b) {
     if (a.harga < b.harga) {
@@ -321,12 +325,12 @@ function sortRating(a, b) {
 }
 
 function selectSort(value) {
-    if (value === 'populer') {
-        return DBfilm.sort(sortRating).reverse()
-    } else if (value === 'murah') {
-        return DBfilm.sort(sortHarga)
-    } else if (value === 'mahal') {
-        return DBfilm.sort(sortHarga).reverse()
+    if (value === 'Terpopuler') {
+        renderFiltered(DBfilm.sort(sortRating).reverse())
+    } else if (value === 'Termurah') {
+        renderFiltered( DBfilm.sort(sortHarga))
+    } else if (value === 'Termahal') {
+        renderFiltered( DBfilm.sort(sortHarga).reverse())
     }
 }
 
@@ -340,6 +344,11 @@ function testimoni() {
         komentar: text
     }
     DBcomment.push(obj)
+
+    document.getElementById('comment-name').value = ""
+    document.getElementById('comment-komen').value = ""
+
+    console.log(name, text, '<<<<<< cek ini')
 
     alert('makasih sudah meninggalkan kenangan')
     renderData()
@@ -408,11 +417,11 @@ function renderFiltered(perGenre){
             <div class="col-md-3"><div class="card" style="width: 18rem;">
                 <img src="${perDB.cover}" class="card-img-top" alt="...">
                 <div class="card-body card-body-custom">
-                    <h5 class="card-title">${perDB.title}</h5>
+                    <h5 class="card-title text-warning">${perDB.title}</h5>
                     <p class="card-sinopsis">${perDB.sinopsis}</p>
                     <p class="card-genre">${perDB.genre}</p>
-                    <p class="card-harga">${perDB.harga}</p>
-                    <p class="card-rating">${perDB.rating}</p>
+                    <p class="card-harga">IDR ${perDB.harga}</p>
+                    <p class="card-rating">⭐ ${perDB.rating}</p>
                     <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
                     <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
                 </div>
@@ -444,6 +453,8 @@ function login(nama ,pw){
         alert('coba inget inget password atau username kamu salah')
     }
 }
+
+
 
 
 

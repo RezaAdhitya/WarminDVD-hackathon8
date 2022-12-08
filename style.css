@@ -1,5 +1,11 @@
-body {
+
+.bg-scrool{
     background-image: url('asset/backGround.jpg');
+    background-size: cover;
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
 }
 
 .header .col {
@@ -96,5 +102,11 @@ body{
 .comment-card {
     background-color: rgb(50, 61, 62);
     color:white
+}
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 

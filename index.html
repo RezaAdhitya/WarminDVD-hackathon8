@@ -8,7 +8,7 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    
+    <div class="bg-scrool"></div>
     <!-- Bootstrap Here -->
     <!-- HEADER AREA -->
     <div class="container">
@@ -197,7 +197,20 @@
     </div>
 
     <!-- CONTENT AREA -->
+
+   
+
     <div class="container sort position-relative">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:1000px">
+          Sort
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Terpopuler</a></li>
+          <li><a class="dropdown-item" href="#">Termurah</a></li>
+          <li><a class="dropdown-item" href="#">Termahal</a></li>
+        </ul>
+      </div>
 
       <div class="btn-group position-absolute top-50 start-50 translate-middle" role="group" aria-label="Basic radio toggle button group">
         <input onclick="renderData()" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
@@ -219,6 +232,8 @@
         <label class="btn btn-outline-secondary btn-warning text-dark"  for="btnradio6">Romantic</label>
       </div>
 
+      
+
     </div>
 
 
@@ -238,11 +253,11 @@
 
           <form>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Nama</label>
+              <label for="exampleFormControlInput1" class="form-label text-warning" style="font-weight: bold;">Nama</label>
               <input type="text" class="form-control " style="width: 50%;" id="comment-name" placeholder="Ketik namamu disini" value="">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Komentar</label>
+              <label for="exampleFormControlTextarea1" class="form-label text-warning" style="font-weight: bold;">Komentar</label>
               <textarea class="form-control" style="width: 90%" id="comment-komen" rows="3" placeholder="Ketik komentarmu disini" value=""></textarea>
             </div>
             <div class="mb-3 submit-btn">
@@ -252,7 +267,7 @@
 
         </div>
         <div class="col-sm-6">
-          <div class="container inner-box p-3" style="background-color: white; border-radius: 10px;">
+          <div class="container inner-box p-3" style="background-color: rgba(61, 78, 87, 0.6); border-radius: 10px;">
             <div class="comment-section p-0" id="comment">
             </div>
           </div>
