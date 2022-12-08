@@ -10,21 +10,18 @@
 
 .content1 .col {
     background-color: rgba(40, 107, 174, 0.548);
-    border: solid black 1px;
     display : flex;
 }
 
 .comment .col {
-    background-color: rgba(172, 40, 174, 0.5);
-    border: solid black 1px;
     height: auto;
 }
 
-.footer .col {
-    background-color: #053F5E ;
-    color: #FFD700;
-    border: solid black 1px;
+.footer {
+    color: white;
     height: 100px;
+    border-top: solid white 2px;
+    padding-top: 20px
 }
 
 .add-to-cart{
@@ -43,19 +40,17 @@
 
 .sort {
     height: 50px;
-    border: solid black 1px;
-    margin-bottom: -5px;
-    margin-top: -20px
+    margin-bottom: 10px;
+    margin-top: 10px
 }
-
 
 body{
     background-color: #022C43;
 }
 
-.card-body{
+.card-body-custom {
     margin : 7px;
-    background-color: #115173;
+    background-color: rgba(61, 78, 87, 0.6);
     color:aliceblue;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -77,4 +72,26 @@ body{
 
 .card-sinopsis{
     font-size: 12px;
+}
+
+.mb-3 {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start
+}
+
+.submit-btn {
+    margin-top: -10px
+}
+
+.comment-section {
+    background-color: white;
+    height: 270px;
+    overflow-y: scroll;
+    color: black;
+}
+
+.comment-card {
+    background-color: green;
+    color:white
 }
