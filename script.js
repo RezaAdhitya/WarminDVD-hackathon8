@@ -217,8 +217,7 @@ let DBcomment = [
         komentar: 'pengirimannya agak delay :(, but overall filmnya love banget suka banget sama kualitas videonya jernih'
     }
 ]
-let DBcart = [
-];
+let DBcart = [];
 
 let DBuserAcc = [
     {
@@ -304,12 +303,21 @@ function sortRating(a, b) {
 }
 
 function selectSort(value) {
+
+    let genreSelected = document.querySelector('input[name="btnradio"]:checked').value;
+    let filter = DBfilm.filter(perData => perData.genre === genreSelected);
+    if (genreSelected === 'all') {
+        filter = DBfilm
+    } 
+
+    console.log(filter, 'yg ini bro')
+
     if (value === 'Terpopuler') {
-        renderFiltered(DBfilm.sort(sortRating).reverse())
+        renderFiltered(filter.sort(sortRating).reverse())
     } else if (value === 'Termurah') {
-        renderFiltered( DBfilm.sort(sortHarga))
+        renderFiltered( filter.sort(sortHarga))
     } else if (value === 'Termahal') {
-        renderFiltered( DBfilm.sort(sortHarga).reverse())
+        renderFiltered( filter.sort(sortHarga).reverse())
     }
 }
 
@@ -324,8 +332,6 @@ function testimoni() {
 
     document.getElementById('comment-name').value = ""
     document.getElementById('comment-komen').value = ""
-
-    console.log(name, text, '<<<<<< cek ini')
 
     alert('makasih sudah meninggalkan kenangan')
     renderData()
@@ -388,12 +394,21 @@ function plusCart(id){
 }
 
 function checkout() {
-    alert('MAKASIH YA UDAH BELI ❤️❤️❤️')
+    let total = 0
+    for (let i in DBcart) {
+        let film = DBfilm.find(perData => perData.id === DBcart[i].id);
+        total += DBcart[i].quantity * film.harga
+    }
+    alert(`Total bayar: IDR ${total}.\nMAKASIH YA UDAH BELI ❤️❤️❤️`)
 }
 
 function filterShowMovie(value) {
-    let x = DBfilm.filter(perData => perData.genre === value);
-    renderFiltered(x)
+    if (!value) {
+        renderFiltered()
+    } else {
+        let x = DBfilm.filter(perData => perData.genre === value);
+        renderFiltered(x)
+    }
 }
 
 function renderFiltered(perGenre){
