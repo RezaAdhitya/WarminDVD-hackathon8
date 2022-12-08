@@ -270,7 +270,7 @@ function renderData(){
                     <p class="card-harga">IDR ${perDB.harga}</p>
                     <p class="card-rating">⭐ ${perDB.rating}</p>
                     <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
-                    <a onclick="${()=>addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                    <a onclick="addToCart(${perDB.id})" class="btn btn-warning btn-success" id="add-cart-btn-${perDB.id}" value="${perDB.id}">Add to cart</a>
                 </div>
             </div></div>
       ` 
@@ -359,7 +359,9 @@ function addToCart(id) {
     // let f = function(PerData) {
     //     if(perData.id === id) return perData
     // }
+
     let film = DBfilm.find(perData => perData.id === id);
+    console.log(film)
 
     let cart = DBcart.find(perData => perData.id === film.id);
 
@@ -370,16 +372,17 @@ function addToCart(id) {
       DBcart.push({...film, quantity: 1})
       alert('aku suka')
     }
+    renderCart()
 }
 // console.log(addToCart(4))
 
-function deleteCart(index){
+function deleteCart(id){
     //validasi
     let text = "kamu yakin mau buang item belanjaan kamu ?";
   if (confirm(text) == true) {
-      DBcart.splice(index,1);
+      DBcart.splice(id-1,1);
       alert("kenapa kok ga di beli :'(")
-    return DBcart 
+      renderCart()
   } else {
     alert('belanja yang banyak ya :p') 
   }
@@ -422,7 +425,7 @@ function renderFiltered(perGenre){
                     <p class="card-harga">IDR ${perDB.harga}</p>
                     <p class="card-rating">⭐ ${perDB.rating}</p>
                     <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
-                    <a onclick="${()=>addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                    <a onclick="addToCart(${perDB.id})" class="btn btn-warning btn-success" id="add-cart-btn" value="${perDB.id}">Add to cart</a>
                 </div>
             </div></div>
       ` 
@@ -462,7 +465,7 @@ function renderCart(){
                             </button>
                           </div>
                         </td>
-                        <td><button type="button" class="btn btn-outline-danger">
+                        <td><button onclick="deleteCart(${DBcart[i].id})" type="button" class="btn btn-outline-danger">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                               class="bi bi-trash3" viewBox="0 0 16 16">
                               <path
