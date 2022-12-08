@@ -4,13 +4,13 @@
 const DBfilm = [
     {
         id: 1,
-        title: 'The Peaky Blinders Season 5',
+        title: 'The Peaky Blinders 5',
         genre: 'Action',
         harga: 92000,
         rating: 9.7,
         cover: 'URL LINK COVER IMAGE',
         trailer: 'https://www.youtube.com/watch?v=Ruyl8_PT_y8',
-        sinopsis: [/*berisi object dari komentar/testimoni user */]
+        sinopsis: [''/*berisi object dari komentar/testimoni user */]
     },
     {
         id: 2,
@@ -241,6 +241,30 @@ let DBcart = [{
 }
 ];
 
+// Render Database
+let juduls = document.getElementsByClassName("card-title");
+let docGenre = document.getElementsByClassName("card-genre");
+let docHarga = document.getElementsByClassName("card-harga");
+let docRating = document.getElementsByClassName("card-rating");
+let docSinopsis = document.getElementsByClassName("card-sinopsis");
+function renderData(){
+    let output = ''
+    for (let perDB of DBfilm){
+        console.log(perDB['title'])
+        for (let index in juduls){
+            console.log(perDB['id']-1 == index)
+            if (perDB['id']-1 == index){
+                juduls[index].innerHTML = perDB['title'];
+                docGenre[index].innerHTML = perDB['genre'];
+                docHarga[index].innerHTML = perDB['harga'];
+                docRating[index].innerHTML = perDB['rating'];
+            }
+        }
+    }
+    return output;
+}
+renderData()
+
 // Input Variable
 
 let trailerButton;
@@ -303,7 +327,7 @@ function addToCart(id) {
     }
     return DBcart
 }
-console.log(addToCart(4))
+// console.log(addToCart(4))
 
 function deleteCart(index){
     DBcart.splice(index,1);
