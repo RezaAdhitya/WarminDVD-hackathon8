@@ -217,28 +217,7 @@ let DBcomment = [
         komentar: 'pengirimannya agak delay :(, but overall filmnya love banget suka banget sama kualitas videonya jernih'
     }
 ]
-let DBcart = [{
-    id: 2,
-    title: 'Baby Driver',
-    genre: 'Action',
-    harga: 71000,
-    rating: 8.5,
-    cover: 'URL LINK COVER IMAGE',
-    trailer: 'https://www.youtube.com/watch?v=zTvJJnoWIPk',
-    sinopsis: [],
-    quantity: 3
-  },
-  {
-    id: 3,
-    title: 'Hot Fuzz',
-    genre: 'Comedy',
-    harga: 81000,
-    rating: 9.0,
-    cover: 'URL LINK COVER IMAGE',
-    trailer: 'https://www.youtube.com/watch?v=674Ka18uFuA',
-    sinopsis: [/*berisi object dari komentar/testimoni user */],
-    quantity: 1
-}
+let DBcart = [
 ];
 
 let DBuserAcc = [
@@ -334,8 +313,6 @@ function selectSort(value) {
     }
 }
 
-// console.log(selectSort('populer'))
-
 function testimoni() {
     let name = document.getElementById('comment-name').value
     let text = document.getElementById('comment-komen').value
@@ -356,51 +333,62 @@ function testimoni() {
 
 
 function addToCart(id) {
-    // let f = function(PerData) {
-    //     if(perData.id === id) return perData
-    // }
-
     let film = DBfilm.find(perData => perData.id === id);
-    console.log(film)
-
     let cart = DBcart.find(perData => perData.id === film.id);
 
+    console.log(film)
+
     if(cart){
-        cart.quantity++;
-        cart.harga += DBfilm.harga;
+        cart.quantity += 1;
+        cart.harga = film.harga*cart.quantity;
+        alert(`nambahin DVD ${cart.title} satu lagi ke keranjang`)
     }else{
       DBcart.push({...film, quantity: 1})
-      alert('aku suka')
+      alert(`nambahin DVD ${film.title} ke keranjang`)
     }
     renderCart()
 }
-// console.log(addToCart(4))
 
-function deleteCart(id){
+function deleteCart(index){
     //validasi
     let text = "kamu yakin mau buang item belanjaan kamu ?";
   if (confirm(text) == true) {
-      DBcart.splice(id-1,1);
+      DBcart.splice(index,1);
       alert("kenapa kok ga di beli :'(")
       renderCart()
-  } else {
-    alert('belanja yang banyak ya :p') 
-  }
-
-}
-// console.log(deleteCart(1))
-function minusCart(id){
-    // let data = DBcart.find(perData => perData.id === data.id);
-    let index = DBcart.findIndex(perData => perData.id === id)
-
-    DBcart[index].quantity--  
-    if(DBcart[index].quantity === 0){
-        deleteCart(index)
+    } else {
+        alert('belanja yang banyak ya :p') 
     }
 
-    return DBcart
 }
-// console.log(minusCart(3))
+
+function minusCart(id, index){
+    let film = DBfilm.find(perData => perData.id === id);
+    let item = DBcart.find(perData => perData.id === id)
+
+    item.quantity-- 
+    item.harga -= film.harga
+    if(item.quantity === 0){
+        deleteCart(index)
+    }
+    renderCart()
+}
+
+function plusCart(id){
+
+    let film = DBfilm.find(perData => perData.id === id);
+    let item = DBcart.find(perData => perData.id === film.id);
+
+    item.quantity++ 
+    item.harga = film.harga*item.quantity;
+    
+    renderCart()
+}
+
+function checkout() {
+    alert('MAKASIH YA UDAH BELI ❤️❤️❤️')
+}
+
 function filterShowMovie(value) {
     let x = DBfilm.filter(perData => perData.genre === value);
     renderFiltered(x)
@@ -435,50 +423,58 @@ function renderFiltered(perGenre){
 renderFiltered()
 
 function renderCart(){
-    let dataCart = document.getElementById('o');
-    // console.log(dataCart)
-    let data = ''
-
-    for (let i in DBcart) {
-        data += `
-                    <tr>
-                        <th scope="row">${Number(i)+1}</th>
-                        <td style="text-align: center">${DBcart[i].title}</td>
-                        <td style="text-align: center">${DBcart[i].harga}</td>
-                        <td>
-                          <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-secondary">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-dash" viewBox="0 0 16 16">
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path>
-                              </svg>
-                            </button>
-                            <!-- <input type="text" name="quant[1]" class="form-control input-number" value="1" min="0" max="10"> -->
-                            <div type="text" class="form-control">${DBcart[i].quantity}</div>
-                            <button type="button" class="btn btn-secondary">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z">
-                                </path>
-                              </svg>
-                            </button>
-                          </div>
-                        </td>
-                        <td><button onclick="deleteCart(${DBcart[i].id})" type="button" class="btn btn-outline-danger">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-trash3" viewBox="0 0 16 16">
-                              <path
-                                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z">
-                              </path>
-                            </svg>
     
-                          </button></td>
-                    </tr>
-  `
+    if (DBcart.length === 0) {
+        document.getElementById('o').innerHTML = ''
+        document.getElementById('tengah-cart').innerHTML = '<p style="color: red"><b>Keranjang kosong bos</b></p>';
+        
+    } else {
+        document.getElementById('tengah-cart').innerHTML = '<button onclick="checkout()" class="btn btn-success" type="button" style="font-size:20px"><b>Check Out</b></button>';
+        let dataCart = document.getElementById('o');
+        let data = ''
+
+        for (let i in DBcart) {
+            data += `
+                        <tr>
+                            <th scope="row">${Number(i)+1}</th>
+                            <td style="text-align: center">${DBcart[i].title}</td>
+                            <td style="text-align: center">IDR ${DBcart[i].harga}</td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button onclick="minusCart(${DBcart[i].id}, ${i})" type="button" class="btn btn-secondary">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path>
+                                  </svg>
+                                </button>
+                                <!-- <input type="text" name="quant[1]" class="form-control input-number" value="1" min="0" max="10"> -->
+                                <div type="text" class="form-control">${DBcart[i].quantity}</div>
+                                <button onclick="plusCart(${DBcart[i].id})" type="button" class="btn btn-secondary">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                            <td><button onclick="deleteCart(${i})" type="button" class="btn btn-outline-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                  class="bi bi-trash3" viewBox="0 0 16 16">
+                                  <path
+                                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z">
+                                  </path>
+                                </svg>
+        
+                              </button></td>
+                        </tr>
+      `
+        }
+        dataCart.innerHTML = data;
     }
 
-    dataCart.innerHTML = data;
+
 }
 renderCart()
 

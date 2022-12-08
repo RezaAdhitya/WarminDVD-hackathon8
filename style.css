@@ -110,3 +110,8 @@ body{
     align-items: center;
 }
 
+th, td {
+    white-space: nowrap;
+    margin: 100px
+}
+
