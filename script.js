@@ -366,9 +366,11 @@ function minusCart(id, index){
     let film = DBfilm.find(perData => perData.id === id);
     let item = DBcart.find(perData => perData.id === id)
 
-    item.quantity-- 
-    item.harga -= film.harga
-    if(item.quantity === 0){
+    if (item.quantity > 1) {
+        item.quantity-- 
+        item.harga -= film.harga
+
+    } else {
         deleteCart(index)
     }
     renderCart()
