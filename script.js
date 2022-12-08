@@ -262,7 +262,7 @@ function renderData(){
                     <p class="card-genre">${perDB.genre}</p>
                     <p class="card-harga">${perDB.harga}</p>
                     <p class="card-rating">${perDB.rating}</p>
-                    <a href="${perDB.trailer}" class="btn btn-dark">Trailer</a>
+                    <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
                     <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
                 </div>
             </div></div>
@@ -275,9 +275,9 @@ function renderData(){
     for (let perC of DBcomment) {
 
         dataComment += `
-        <div class="card" style="width: 30rem;">
+        <div class="card" style="width: 36rem;">
               <div class="card-body text-start comment-card">
-                <h5 class="card-title">${perC.nama}</h5>
+                <h5 class="card-title text-warning">${perC.nama}</h5>
                 <p class="card-text">${perC.komentar}</p>
               </div>
             </div>
