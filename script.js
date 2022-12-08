@@ -241,12 +241,19 @@ let DBcart = [{
 }
 ];
 
+let DBuserAcc = [
+    {
+        username: 'Dimas Nugroho Ramadhan',
+        password: 'apaja'
+    }
+]
+
 // Render Database
-let juduls = document.getElementsByClassName("card-title");
-let docGenre = document.getElementsByClassName("card-genre");
-let docHarga = document.getElementsByClassName("card-harga");
-let docRating = document.getElementsByClassName("card-rating");
-let docSinopsis = document.getElementsByClassName("card-sinopsis");
+// let juduls = document.getElementsByClassName("card-title");
+// let docGenre = document.getElementsByClassName("card-genre");
+// let docHarga = document.getElementsByClassName("card-harga");
+// let docRating = document.getElementsByClassName("card-rating");
+// let docSinopsis = document.getElementsByClassName("card-sinopsis");
 
 function renderData(){
     let box = document.getElementById('box')
@@ -333,9 +340,9 @@ function testimoni() {
         komentar: text
     }
     DBcomment.push(obj)
-    alert('Terima kasih sudah meninggalkan kenangan')
-    renderData()
 
+    alert('makasih sudah meninggalkan kenangan')
+    renderData()
 }
 
 
@@ -348,7 +355,8 @@ function addToCart(id) {
     let cart = DBcart.find(perData => perData.id === film.id);
 
     if(cart){
-         cart.quantity++;
+        cart.quantity++;
+        cart.harga += DBfilm.harga;
     }else{
       DBcart.push({...film, quantity: 1})
     //   return DBcart
@@ -407,6 +415,30 @@ function renderFiltered(perGenre){
     box.innerHTML = data
 }
 renderFiltered()
+
+function register(nama, pw){
+    let data = DBuserAcc.find(perData => perData.username === nama)
+    if(!data){
+        DBuserAcc.push({username:nama, password:pw})-
+        alert('kamu udah jadi member. diskonanya nanti ya :p')
+    }else{
+        alert('yang kreativ dong :( nama usernamenya udah ada tau...')
+    }
+}
+
+function login(nama ,pw){
+    let data = DBuserAcc.find(perData => perData.username === nama && perData.password === pw)
+    if(data){
+        //fitur account ada belom di buat
+        document.getElementById('useracc').innerHTML = data.username;//menampilkan nama user account
+        document //ngeshow element
+        alert('')
+    }else{
+        alert('coba inget inget password atau username kamu salah')
+    }
+}
+
+
 
 
 
