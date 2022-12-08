@@ -1,7 +1,8 @@
 
 
 .header .col {
-    background-color: rgba(54, 208, 27, 0.5);
+    background-color: #115173 ;
+    color: #FFD700;
     border: solid black 1px;
     height: 100px;
 }
@@ -18,7 +19,10 @@
 }
 
 .footer .col {
-    height: 100px
+    background-color: #053F5E ;
+    color: #FFD700;
+    border: solid black 1px;
+    height: 100px;
 }
 
 .add-to-cart{
@@ -26,15 +30,43 @@
 }
 
 .container .content1 {
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .card {
-    margin-bottom: 35px
+    margin-bottom: 35px;
+    background-color: #022C43;
+    margin: 10px;
 }
 
 .sort {
     height: 50px;
     margin-bottom: 10px;
     margin-top: 10px
+}
+
+body{
+    background-color: #022C43;
+}
+
+.card-body{
+    margin : 7px;
+    background-color: #115173;
+    color:aliceblue;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-img-top{
+    height: 375px;
+    width: auto;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+.scrollspy-example{
+    color: white;
 }
