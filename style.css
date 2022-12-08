@@ -65,6 +65,8 @@ body{
     height: 375px;
     width: auto;
     border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
     margin: 10px;
     margin-bottom: 0;
 }
