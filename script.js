@@ -1,7 +1,7 @@
 //genre
 // Action, comedy, Horor, Romantic, Drama
 //...................===============>>>>>>>>>>>>>> WARMINDVD <<<<<<<<<<<<<=============...........................
-const DBfilm = [
+let DBfilm = [
     {
         id: 1,
         title: 'The Peaky Blinders 5',
@@ -269,7 +269,7 @@ function renderData(){
                     <p class="card-genre">${perDB.genre}</p>
                     <p class="card-harga">${perDB.harga}</p>
                     <p class="card-rating">${perDB.rating}</p>
-                    <a href="${perDB.trailer}" class="btn btn-dark">Trailer</a>
+                    <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
                     <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
                 </div>
             </div></div>
@@ -282,9 +282,9 @@ function renderData(){
     for (let perC of DBcomment) {
 
         dataComment += `
-        <div class="card" style="width: 30rem;">
+        <div class="card" style="width: 36rem;">
               <div class="card-body text-start comment-card">
-                <h5 class="card-title">${perC.nama}</h5>
+                <h5 class="card-title text-warning">${perC.nama}</h5>
                 <p class="card-text">${perC.komentar}</p>
               </div>
             </div>
@@ -332,13 +332,17 @@ function selectSort(value) {
 
 // console.log(selectSort('populer'))
 
-function testimoni(name, text) {
+function testimoni() {
+    let name = document.getElementById('comment-name').value
+    let text = document.getElementById('comment-komen').value
     let obj = {
         nama: name,
         komentar: text
     }
     DBcomment.push(obj)
+
     alert('makasih sudah meninggalkan kenangan')
+    renderData()
 }
 
 
@@ -379,13 +383,38 @@ function minusCart(id){
     return DBcart
 }
 // console.log(minusCart(3))
-
 function filterShowMovie(value) {
-    let data = DBfilm.filter(perData => perData.genre === value);
-    return data
+    let x = DBfilm.filter(perData => perData.genre === value);
+    renderFiltered(x)
 }
 
-// console.log(filterShowMovie('Action'))
+function renderFiltered(perGenre){
+
+    if (!perGenre)
+        perGenre = DBfilm
+
+    let box = document.getElementById('box')
+    let data = ""
+    for (let perDB of perGenre){
+    
+        data += `
+            <div class="col-md-3"><div class="card" style="width: 18rem;">
+                <img src="${perDB.cover}" class="card-img-top" alt="...">
+                <div class="card-body card-body-custom">
+                    <h5 class="card-title">${perDB.title}</h5>
+                    <p class="card-sinopsis">${perDB.sinopsis}</p>
+                    <p class="card-genre">${perDB.genre}</p>
+                    <p class="card-harga">${perDB.harga}</p>
+                    <p class="card-rating">${perDB.rating}</p>
+                    <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
+                    <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
+                </div>
+            </div></div>
+      ` 
+    }
+    box.innerHTML = data
+}
+renderFiltered()
 
 function register(nama, pw){
     let data = DBuserAcc.find(perData => perData.username === nama)
