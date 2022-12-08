@@ -267,8 +267,8 @@ function renderData(){
                     <h5 class="card-title">${perDB.title}</h5>
                     <p class="card-sinopsis">${perDB.sinopsis}</p>
                     <p class="card-genre">${perDB.genre}</p>
-                    <p class="card-harga">${perDB.harga}</p>
-                    <p class="card-rating">${perDB.rating}</p>
+                    <p class="card-harga">IDR ${perDB.harga}</p>
+                    <p class="card-rating">⭐ ${perDB.rating}</p>
                     <a href="${perDB.trailer}" target="_blank" class="btn btn-dark">Trailer</a>
                     <a onclick="${addToCart(perDB.id)}" class="btn btn-warning btn-success" value="${perDB.id}">Add to cart</a>
                 </div>
