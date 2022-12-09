@@ -32,12 +32,65 @@
             <!-- <a href="#" type="button" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"> -->
     
             </svg></a>
-            <a href="#" type="button" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-                <path
-                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z">
-                </path>
-              </svg></a>
+            <!-- Button trigger modal -->
+  <a href="#" type="button" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+      <path
+        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z">
+      </path>
+    </svg></a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <div>
+                <form class="style3">
+                    <input id="lNama" type="text" placeholder="Nama pengguna">
+                    <input id="lPw" type="password" placeholder="Kata sandi"> 
+                    <input id="btnLogin" type="button" value="Masuk"/>
+                </form>
+            </div>
+            <p  data-bs-toggle="modal" data-bs-target="#register">Register here!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register -->
+<div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form class="style3">
+              <input id="rNama" type="text" placeholder="Nama pengguna">
+              <input id ="rPw" type="password" placeholder="Kata sandi"> 
+              <input id="btnRegis" type="button" value="Masuk"/>
+          </form>
+      </div>
+      <p  data-bs-toggle="modal" data-bs-target="#exampleModal">Login here!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
     
             <!-- CART AREA -->
             <button style="position: left" class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -82,6 +135,7 @@
                       <!-- <button type="button" class="btn btn-success" class="btn-close float-end">Success</button> -->
                     </tfoot>
                   </table>
+                  <p class="text-start text-danger"><b>Total Harga: <span  id="total"></span></b> </p>
                   <div class="d-grid gap-2" id="tengah-cart">
                     <button class="btn btn-success" type="button" style="font-size:20px"><b>Check Out ##Tambah Alert</b></button>
                   </div>
