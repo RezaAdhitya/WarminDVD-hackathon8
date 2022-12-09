@@ -496,37 +496,37 @@ function renderCart(){
 }
 renderCart()
 
-let btnRegis = document.getElementById('btnRegis')
+// let btnRegis = document.getElementById('btnRegis')
 
 
-let rNama = document.getElementById('rNama').value
+// let rNama = document.getElementById('rNama').value
 
-let rPw = document.getElementById('rPw').value
+// let rPw = document.getElementById('rPw').value
 
-btnRegis.addEventListener('click', register(rNama,rPw))
+// btnRegis.addEventListener('click', register(rNama,rPw))
 
-function register(nama, pw){
-    console.log(nama,pw)
-    let data = DBuserAcc.find(perData => perData.username === nama)
-    if(!data){
-        DBuserAcc.push({username:nama, password:pw})-
-        alert('kamu udah jadi member. diskonanya nanti ya :p')
-    }else{
-        alert('yang kreativ dong :( nama usernamenya udah ada tau...')
-    }
-}
+// function register(nama, pw){
+//     console.log(nama,pw)
+//     let data = DBuserAcc.find(perData => perData.username === nama)
+//     if(!data){
+//         DBuserAcc.push({username:nama, password:pw})-
+//         alert('kamu udah jadi member. diskonanya nanti ya :p')
+//     }else{
+//         alert('yang kreativ dong :( nama usernamenya udah ada tau...')
+//     }
+// }
 
-function login(nama ,pw){
-    let data = DBuserAcc.find(perData => perData.username === nama && perData.password === pw)
-    if(data){
-        //fitur account ada belom di buat
-        document.getElementById('useracc').innerHTML = data.username;//menampilkan nama user account
-        document //ngeshow element
-        alert('')
-    }else{
-        alert('coba inget inget password atau username kamu salah')
-    }
-}
+// function login(nama ,pw){
+//     let data = DBuserAcc.find(perData => perData.username === nama && perData.password === pw)
+//     if(data){
+//         //fitur account ada belom di buat
+//         document.getElementById('useracc').innerHTML = data.username;//menampilkan nama user account
+//         document //ngeshow element
+//         alert('')
+//     }else{
+//         alert('coba inget inget password atau username kamu salah')
+//     }
+// }
 
 
 
