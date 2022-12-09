@@ -226,13 +226,6 @@ let DBuserAcc = [
     }
 ]
 
-// Render Database
-// let juduls = document.getElementsByClassName("card-title");
-// let docGenre = document.getElementsByClassName("card-genre");
-// let docHarga = document.getElementsByClassName("card-harga");
-// let docRating = document.getElementsByClassName("card-rating");
-// let docSinopsis = document.getElementsByClassName("card-sinopsis");
-
 function renderData(){
     let box = document.getElementById('box')
     let data = ""
@@ -343,11 +336,12 @@ function addToCart(id) {
     let cart = DBcart.find(perData => perData.id === film.id);
 
     console.log(film)
-
+    
     if(cart){
         cart.quantity += 1;
         cart.harga = film.harga*cart.quantity;
         alert(`nambahin DVD ${cart.title} satu lagi ke keranjang`)
+        
     }else{
       DBcart.push({...film, quantity: 1})
       alert(`nambahin DVD ${film.title} ke keranjang`)
@@ -490,13 +484,29 @@ function renderCart(){
         }
         dataCart.innerHTML = data;
     }
+    let total = 0
 
+    for (let i in DBcart) {
+        let film = DBfilm.find(perData => perData.id === DBcart[i].id);
+        total += DBcart[i].quantity * film.harga
+    }
+
+    document.getElementById('total').innerHTML = total
 
 }
 renderCart()
 
+let btnRegis = document.getElementById('btnRegis')
+
+
+let rNama = document.getElementById('rNama').value
+
+let rPw = document.getElementById('rPw').value
+
+btnRegis.addEventListener('click', register(rNama,rPw))
 
 function register(nama, pw){
+    console.log(nama,pw)
     let data = DBuserAcc.find(perData => perData.username === nama)
     if(!data){
         DBuserAcc.push({username:nama, password:pw})-
